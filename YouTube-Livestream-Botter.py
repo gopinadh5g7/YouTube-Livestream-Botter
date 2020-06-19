@@ -21,7 +21,7 @@ https://github.com/KevinLage/YouTube-Livestream-Botter
 """
 
 print(intro)
-
+intro = ""
 if platform.system() == "Windows": #checking OS
     clear = "cls"
 else:
@@ -71,7 +71,7 @@ class proxy():
                 for url in urls:
                     data += requests.get(url).text
                     self.splited += data.split("\r\n") #scraping and splitting proxies
-            time.sleep(600)
+            time.sleep(1000)
     
     def get_proxy(self):
         random1 = random.choice(self.splited) #choose a random proxie
@@ -106,7 +106,7 @@ def bot():
 
 
 
-maxthreads = int(input("How many Threads? Recommended: 500 - 1000\n"))
+maxthreads = int(input("How many Threads? Recommended: 10 - 50\n"))
 
 threading.Thread(target=a.printservice).start()
 num = 0
